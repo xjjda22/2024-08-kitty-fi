@@ -1,0 +1,4 @@
+forge flatten --output src/KittyPool.flattened.sol src/KittyPool.sol
+
+docker pull mythril/myth
+docker run -v $(pwd):/tmp mythril/myth analyze /tmp/KittyPool.flattened.sol
