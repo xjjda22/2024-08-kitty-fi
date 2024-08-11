@@ -1,10 +1,15 @@
 ### What Went Wrong?
-The Solidity contract contains potential vulnerabilities that could affect its security and functionality. The identified issues fall within the Smart Contract Weakness Classification (SWC) numbering from 100 to 136. These vulnerabilities include the lack of explicit visibility for functions and improper handling of external call results, which could lead to Denial of Service (DoS) attacks.
+The contract has security issues. These fall under Smart Contract Weakness (SWC) numbers 100 to 136. The main problems are:
+
+1. Functions without clear visibility
+2. Poor handling of external call results
+
+These could lead to attacks that stop the contract from working.
 
 ### Smart Contract Weakness Classification (SWC 100 - 136) with Line Numbers and Code Snippets
 
 #### SWC-100: Function Default Visibility
-Some functions in the contract do not have explicit visibility modifiers, which can lead to unintended behavior or security issues. Below are the line numbers and code snippets where this issue occurs:
+Some functions don't say if they're public or private. This can cause problems. Here are examples:
 
 - **Line 7:**
   ```solidity
@@ -34,7 +39,7 @@ Some functions in the contract do not have explicit visibility modifiers, which 
 - **Additional occurrences:** Lines 210, 215, 224, 233, 250, 261, and several others throughout the contract.
 
 #### SWC-113: DoS with Failed Call
-Certain external calls are made without properly handling the return value, which could result in a Denial of Service (DoS) vulnerability. The relevant lines and snippets are as follows:
+Some external calls don't check if they worked. This could let attackers stop the contract. Examples:
 
 - **Line 448:**
   ```solidity
